@@ -1,0 +1,42 @@
+body {
+    background: white url("skills.jpeg");
+    background-repeat:no-repeat;
+}
+td input {
+    text-align : center;
+}
+div fieldset {
+    border : solid black thin;
+    width: 500px;
+    background-color : #ffffb0;
+}
+fieldset {
+    border:none;
+    margin: 0 0 0 10px;
+    padding 0;
+}
+legend {
+	font-size: 20px;
+	background-color:  black;
+	color: white;
+	width: 100%;
+	padding: 5px;
+}
+label field {
+	text-align: right;
+	width: 100px;
+	float: left;
+	font-weight: bold;
+}
+input textbox {
+	clear: both;
+	float: left;
+}
+fieldset p {
+	clear: both;
+	padding: 5px;
+}
+label span, .required {
+	color: red;
+	font-weight: bold;
+}

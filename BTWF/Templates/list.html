@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+        {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+</head>
+<body>
+
+{% if data %}
+<div class="table-responsive">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><h4 class="text-center">All Records</h4></div>
+    <!-- Table -->
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Fathers Name</th>
+            <th>Contact No.</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>DOB</th>
+        </tr>
+        </thead>
+        {% for i in data %}
+        <tr>
+            <th scope="row">{{i.pk}}</th>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.fathers_name}}</td>
+            <td>{{i.contact_number}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.course}}</td>
+            <td>{{i.dob}}</td>
+            <td><a href="{% url 'edit' i.id %}"><button type="button" class="btn btn-warning center-block">Edit</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<a href="form/"><button type="button" class="btn btn-primary center-block">Add Record</button></a>
+{% else %}
+<h1>No Record Found</h1>
+<a href="form/"><button type="button" class="btn btn-primary center-block">Add Record</button></a>
+{% endif %}
+
+<!--{% if data %}-->
+<!--<h1>All Records</h1>-->
+<!--{% for i in data %}-->
+<!--{{i.first_name}}<br>-->
+<!--{{i.last_name}}<br>-->
+<!--{{i.fathers_name}}<br>-->
+<!--{{i.course}}<br>-->
+<!--{{i.dob}}<br>-->
+<!--<hr>-->
+<!--{% endfor %}-->
+<!--{% else %}-->
+<!--<h1>No Record Found</h1>-->
+<!--{% endif %}-->
+</body>
+</html>
